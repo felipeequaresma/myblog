@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <section class="home">
+    <base-layout>
+        <template v-slot:header>
+              <profile></profile>
+        </template>
+         <template v-slot:section>
+           <div>
+              <post-card></post-card>
+           </div>
+        </template>
+    </base-layout>
+  </section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import BaseLayout from "@/components/TemplateDefault";
+  import PostCard from '@/components/PostCard';
+  import Profile from '@/components/Profile';
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+
+  export default {
+    name: 'Home',
+    components: {
+        BaseLayout,
+        PostCard,
+        Profile
+    }
 }
 </script>
+<style scoped>
+  /* .home{
+    height:1000px;
+  } */
+</style>
+
