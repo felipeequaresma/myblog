@@ -1,6 +1,6 @@
 
 # Projeto Meu Blog
-Esse projeto foi desenvolvido com a ideia de práticar as novas tecnologias e implementações que venho estudando! 
+Esse projeto foi desenvolvido com a ideia de práticar as novas tecnologias e implementações que venho estudando, como Vue.js e Laravel. 
 
 
 ```
