@@ -17,8 +17,8 @@ Front-end
 ```
 > - [x] Desenvolvimento da tela Home
 > - [x] Desenvolvimento da tela Home Responsiva
-> - [x] Desenvolvimento da tela de Login
-> - [x] Desenvolvimento da tela de Login Responsiva
+> - [ ] Desenvolvimento da tela de Login
+> - [ ] Desenvolvimento da tela de Login Responsiva
 > - [ ] Desenvolvimento do Painel Administrativo
 > - [ ] Desenvolvimento do Painel Administrativo Responsivo
 
