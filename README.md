@@ -43,7 +43,8 @@ Front-end
 ```
  Próximas atualizações 
 ```
-> - Estruturar o banco de dados
+> - Desenvolver a tela do Painel Administrativo
+> - Estruturar o Banco de Dados
 > - Começar a desenvolver a API
 
 ```
