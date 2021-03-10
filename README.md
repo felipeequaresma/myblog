@@ -15,16 +15,15 @@ Front-end
 > - [ ]  Desenvolver Api Rest
 
 ```
-# Interfaces
+ Interfaces
 ```
-> ![Login](https://user-images.githubusercontent.com/25269099/110657766-de0b5580-819f-11eb-88f7-5ae50ef8a550.png)
-![Responsive - Home](https://user-images.githubusercontent.com/25269099/110657781-e1064600-819f-11eb-952e-244e4fecfd8b.png)
+> ![Home v1](https://user-images.githubusercontent.com/25269099/110661343-3bed6c80-81a3-11eb-963f-6f8fc25f5dc2.png)
 
-
- 
-
-
-
+```
+ Tecnologias utilizadas
+```
+> - Vue.js
+> - Laravel
 
 
  
