@@ -1,5 +1,5 @@
 
-# Projeto Blog
+# Projeto Meu Blog
 
 
 ```
@@ -41,7 +41,16 @@ Front-end
 > - MySQL
 
 ```
- Próximas atualizaões 
+ Próximas atualizações 
+```
+> - Estruturar o banco de dados
+> - Começar a desenvolver a API
+
+```
+ Como rodar o projeto
 ```
 
- 
+> 1. git clone (https://github.com/felipeequaresma/myblog.git)
+> 2. npm install 
+> 3. npm update 
+> 4. npm run serve
