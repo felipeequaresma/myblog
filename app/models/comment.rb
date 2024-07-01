@@ -13,4 +13,6 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   default_scope { order(created_at: :desc) }
+
+  validates :name, :comment, presence: true
 end
