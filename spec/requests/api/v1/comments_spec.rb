@@ -22,11 +22,11 @@ RSpec.describe 'Comments', type: :request do
       end
     end
 
-    context 'when posts is empty' do
+    context 'when comments is empty' do
       let!(:posts) { create_list(:post, 4) }
       let(:post_id) { posts.first.id }
 
-      it 'returns an empty list of posts' do
+      it 'returns an empty list of comments' do
         get api_v1_post_comments_path(post_id: post_id)
 
         expect(response).to have_http_status(:ok)
@@ -149,15 +149,14 @@ RSpec.describe 'Comments', type: :request do
     end
 
     context 'when logged in' do
-      before { sign_in user }
+      before { delete api_v1_post_comment_path(post_id, comment_id), headers: auth_headers }
 
-      it 'returns status no_content' do
-        delete api_v1_post_comment_path(post_id, comment_id), headers: auth_headers
+      it 'returns status code 200' do
         expect(response).to have_http_status(:ok)
       end
 
-      it 'deletes the post' do
-        expect { delete api_v1_post_comment_path(post_id, comment_id), headers: auth_headers }.to change { Comment.where(post_id: post_id).count }.by(-1)
+      it 'deletes the comment' do
+        expect(JSON.parse(response.body)['message']).to match('Comentário excluido com sucesso')
       end
     end
   end

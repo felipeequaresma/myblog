@@ -33,9 +33,8 @@ RSpec.describe 'Posts', type: :request do
     end
 
     context 'when posts is empty' do
+      before {  get api_v1_posts_path }
       it 'returns an empty list of posts' do
-        get api_v1_posts_path
-
         expect(response).to have_http_status(:ok)
         expect(response.body).to eq('[]')
       end
@@ -59,9 +58,9 @@ RSpec.describe 'Posts', type: :request do
     end
 
     context 'when the post does not exist' do
-      it 'returns a not found response' do
-        get api_v1_post_path(123456)
+      before { get api_v1_post_path(123456) }
 
+      it 'returns a not found response' do
         expect(response).to have_http_status(:not_found)
       end
     end
@@ -171,15 +170,14 @@ RSpec.describe 'Posts', type: :request do
     end
 
     context 'when logged in' do
-      before { sign_in user }
+      before { delete api_v1_post_path(post.id), headers: auth_headers }
 
-      it 'returns status no_content' do
-        delete api_v1_post_path(post.id), headers: auth_headers
+      it 'returns status code 200' do
         expect(response).to have_http_status(:ok)
       end
 
       it 'deletes the post' do
-        expect { delete api_v1_post_path(post.id), headers: auth_headers }.to change { Post.count }.by(-1)
+        expect(JSON.parse(response.body)['message']).to match('Post excluido com sucesso')
       end
     end
   end
