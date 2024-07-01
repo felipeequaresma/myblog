@@ -11,6 +11,8 @@
 #
 FactoryBot.define do
   factory :post do
-    
+    title { "Post Title #{rand(1000)}" }
+    text { "This is a sample post text #{rand(1000)}" }
+    user
   end
 end
