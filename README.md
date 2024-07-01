@@ -1,4 +1,4 @@
-# Letzplay Core
+# MyBlog
 
 # Configurando o projeto via docker
 
