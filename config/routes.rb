@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
-      resources :posts
+      resources :posts do
+        resources :comments, except: :show
+      end
+
       resources :users
     end
   end
