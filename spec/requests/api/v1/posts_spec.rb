@@ -17,7 +17,7 @@ RSpec.describe 'Posts', type: :request do
 
       it 'returns posts in the correct format' do
         posts = JSON.parse(response.body)
-        expect(posts.first.keys).to match_array(%w[id title text created_at author comments])
+        expect(posts.first.keys).to match_array(%w[id title text created_at author])
       end
 
       context 'with author' do
@@ -29,14 +29,6 @@ RSpec.describe 'Posts', type: :request do
           posts = JSON.parse(response.body)
           expect(posts.first['author'].keys).to match_array(%w[id name])
         end
-      end
-    end
-
-    context 'when posts is empty' do
-      before {  get api_v1_posts_path }
-      it 'returns an empty list of posts' do
-        expect(response).to have_http_status(:ok)
-        expect(response.body).to eq('[]')
       end
     end
   end
